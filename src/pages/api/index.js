@@ -1,6 +1,9 @@
+require('dotenv').config();
 const app = require('express')();
 const fs = require("fs");
+const cors = require('cors');
 
+app.use(cors())
 
 export default function handler(req, res, next) {
     // if (!req.body.length > 0) {
@@ -14,21 +17,9 @@ export default function handler(req, res, next) {
             console.error('Error appending to log file:', err);
         }
         // next();
-        return res.send(null)
+        return res.send(true)
     });
-    return res.send(null)
+    return res.send(true)
 }
 
-app.use((req, res, next) => {
-    let logMessage = `URL: ${req.hostname}${req.url} | Body: ${JSON.stringify(req.body)} | Time: ${new Date().toLocaleString()}\n`;
 
-    fs.appendFile('log.txt', logMessage, (err) => {
-        if (err) {
-            console.error('Error appending to log file:', err);
-        }
-        // next();
-        return res.send(null)
-    });
-    return res.send(null)
-    handler(req, res, next)
-})

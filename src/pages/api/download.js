@@ -6,7 +6,10 @@ const readline = require('readline');
 // External modules 
 
 export default async function handler(req, res) {
-    const { videoUrl, formatId } = req.body;
+    // const { videoUrl, formatId } = req.body;
+    const videoUrl = req.query.videoUrl;
+    const formatId = req.query.formatId;
+
 
     try {
 
@@ -87,9 +90,10 @@ export default async function handler(req, res) {
                 // Cleanup
                 process.stdout.write('\n\n\n\n');
                 clearInterval(progressbarHandle);
-                res.status(200).send(fs.readFileSync(videoFilePath))
+                res.status(200).send(fs.readFileSync(videoFilePath));
+
                 if (videoFilePath) {
-                    fs.unlinkSync(videoFilePath)
+                    fs.unlinkSync(videoFilePath);
                 }
                 console.log('done');
                 //
@@ -99,7 +103,7 @@ export default async function handler(req, res) {
                 console.error(error);
 
                 if (videoFilePath) {
-                    fs.unlinkSync(videoFilePath)
+                    fs.unlinkSync(videoFilePath);
                 }
             }
         });
