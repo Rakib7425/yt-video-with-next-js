@@ -6,10 +6,9 @@ const readline = require('readline');
 // External modules 
 
 export default async function handler(req, res) {
-    // const { videoUrl, formatId } = req.body;
-    const videoUrl = req.query.videoUrl;
-    const formatId = req.query.formatId;
-
+    const { videoUrl, formatId } = req.body;
+    // const videoUrl = req.query.videoUrl;
+    // const formatId = req.query.formatId;
 
     try {
 

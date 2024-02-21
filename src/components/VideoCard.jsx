@@ -25,6 +25,7 @@ const VideoCard = ({ videoUrl, video, thumbnail, title }) => {
 				{ videoUrl, formatId: itag },
 				{ responseType: "blob" }
 			);
+
 			const blob = new Blob([response.data], { type: "video/mp4" });
 			const url = window.URL.createObjectURL(blob);
 			const link = document.createElement("a");
