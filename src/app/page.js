@@ -1,3 +1,5 @@
+import YtDownloader from "@/components/YtDownloader";
+import StoreProvider from "./StoreProvider";
 
 export default function Home() {
   return (
@@ -6,7 +8,9 @@ export default function Home() {
         <h1 className='text-2xl font-bold py-8 md:text-yellow-500'>
           YouTube video Downloader
         </h1>
-
+        <StoreProvider>
+          <YtDownloader />
+        </StoreProvider>
       </section>
     </div>
   );

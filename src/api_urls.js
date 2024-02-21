@@ -11,6 +11,6 @@
 // export const search_url = `https://youtube-downloader-uhd7.onrender.com/search`;
 // export const download_url = `https://youtube-downloader-uhd7.onrender.com/download`;
 
-export const base_url = `/`
-export const search_url = `/search`
-export const download_url = `/download`
+export const base_url = `api/`
+export const search_url = `api/search`
+export const download_url = `api/download`

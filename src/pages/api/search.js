@@ -1,11 +1,11 @@
 
+
 const ytdl = require('ytdl-core');
 
-export default async function handler(req, res) {
-    // const url = req.body.videoUrl;
-    const url = req.query.url;
-
-    // console.log(url);
+export default async function POST(req, res) {
+    const url = req.body.videoUrl;
+    //    const url = req.query.url;
+    console.log(url);
 
     try {
         // if (typeof videoUrl !== "string") {
@@ -14,10 +14,11 @@ export default async function handler(req, res) {
 
         // Retrieve information about the video from the provided URL
         const videoInfo = await ytdl.getInfo(url);
+
         if (videoInfo) {
-            return res.status(200).send(videoInfo);
+            return res.status(200).json(videoInfo);
         } else {
-            return res.status(400).json({ Message: "Invalid video url" })
+            return res.json({ Message: "Invalid video url" })
         }
 
     } catch (error) {
