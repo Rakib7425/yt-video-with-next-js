@@ -8,6 +8,7 @@ import { useState } from "react";
 import { IoVolumeHigh } from "react-icons/io5";
 import { download_url } from "../api_urls";
 import Loader from "./Loader";
+import Image from "next/image";
 
 const VideoCard = ({ videoUrl, video, thumbnail, title }) => {
 	const [downloading, setDownloading] = useState(false);
@@ -45,7 +46,7 @@ const VideoCard = ({ videoUrl, video, thumbnail, title }) => {
 	return (
 		<div className='flex items-center justify-between w-full px-2 md:px-0.5 md:w-3/4'>
 			<div>
-				<img src={`${thumbnail.url}`} alt='Thumbnail' className='h-20 w-32' />
+				<Image src={`${thumbnail.url}`} alt='Thumbnail' className='h-20 w-32' />
 			</div>
 			<p className='text-xl dark:text-green-400 text-gray-800 flex items-center md:justify-center justify-between gap-x-0.5 md:gap-2'>
 				Quality:{" "}
