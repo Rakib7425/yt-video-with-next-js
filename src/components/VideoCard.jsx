@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 /* eslint-disable no-unused-vars */
@@ -46,7 +47,13 @@ const VideoCard = ({ videoUrl, video, thumbnail, title }) => {
 	return (
 		<div className='flex items-center justify-between w-full px-2 md:px-0.5 md:w-3/4'>
 			<div>
-				<Image src={`${thumbnail.url}`} alt='Thumbnail' className='h-20 w-32' />
+				<img
+					src={`${thumbnail.url}`}
+					alt='Thumbnail'
+					className='h-20 w-32'
+					height={80}
+					width={128}
+				/>
 			</div>
 			<p className='text-xl dark:text-green-400 text-gray-800 flex items-center md:justify-center justify-between gap-x-0.5 md:gap-2'>
 				Quality:{" "}

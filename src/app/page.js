@@ -12,12 +12,14 @@ export default function Home() {
         <h1 className='text-2xl font-bold py-8 md:text-yellow-500'>
           YouTube video Downloader
         </h1>
-        <div >
-          <StoreProvider>
+
+        <StoreProvider>
+          <div className="mx-auto">
             <ToggleDarkMode />
             <YtDownloader />
-          </StoreProvider>
-        </div>
+          </div>
+        </StoreProvider>
+
       </section>
     </div>
   );

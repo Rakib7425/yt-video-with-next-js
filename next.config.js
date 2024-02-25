@@ -31,3 +31,15 @@ module.exports = {
         },
     },
 }
+
+module.exports = {
+    images: {
+        formats: ["image/avif", "image/webp"],
+        remotePatterns: [
+            {
+                hostname: "i.ytimg.com",
+                pathname: "/image/upload/**",
+            },
+        ],
+    },
+};

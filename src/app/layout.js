@@ -12,6 +12,8 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
+
+      {/* Main Body */}
       <body>{children}</body>
     </html>
   );
