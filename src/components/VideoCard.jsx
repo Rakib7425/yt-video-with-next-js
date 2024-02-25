@@ -9,7 +9,6 @@ import { useState } from "react";
 import { IoVolumeHigh } from "react-icons/io5";
 import { download_url } from "../api_urls";
 import Loader from "./Loader";
-import Image from "next/image";
 
 const VideoCard = ({ videoUrl, video, thumbnail, title }) => {
 	const [downloading, setDownloading] = useState(false);
