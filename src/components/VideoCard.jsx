@@ -22,6 +22,7 @@ const VideoCard = ({ videoUrl, video, thumbnail, title }) => {
 
 		try {
 			setDownloading(true);
+
 			const response = await axios.post(
 				download_url,
 				{ videoUrl, formatId: itag },
