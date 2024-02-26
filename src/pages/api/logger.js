@@ -7,7 +7,7 @@ export default function handler(req, res, next) {
     //     return next()
     // }
 
-    let logMessage = `URL: ${req.hostname}${req.url} | Body: ${JSON.stringify(req.body)} | Time: ${new Date().toLocaleString()}\n`;
+    let logMessage = `URL: ${req.get('origin')}${req.url} | Body: ${JSON.stringify(req.body)} | Time: ${new Date().toLocaleString()}\n`;
 
     fs.appendFile('log.txt', logMessage, (err) => {
         if (err) {

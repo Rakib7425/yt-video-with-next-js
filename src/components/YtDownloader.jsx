@@ -7,6 +7,7 @@ import Loader from "./Loader";
 import VideoInfo from "./VideoInfo";
 import { setVideoInfo } from "../lib/store/features/videoInfoSlice";
 import { search_url } from "../api_urls";
+import Shimmer from "./Shimmer";
 
 const YtDownloader = () => {
 	const [url, setUrl] = useState("");
@@ -79,7 +80,12 @@ const YtDownloader = () => {
 					</span>
 				</button>
 			</div>
-			{video_info && (
+			{isLoading && (
+				<div>
+					<Shimmer />
+				</div>
+			)}
+			{video_info && !isLoading && (
 				<div className='videoInfo h-full'>
 					<VideoInfo />
 				</div>
