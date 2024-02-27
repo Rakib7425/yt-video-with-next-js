@@ -18,6 +18,7 @@ const YtDownloader = () => {
 
 	useEffect(() => {
 		dispatch(setVideoInfo(video_info));
+
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [video_info]);
 
