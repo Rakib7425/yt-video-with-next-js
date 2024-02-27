@@ -16,6 +16,7 @@ export default function handler(req, res, next) {
         if (err) {
             console.error('Error appending to log file:', err);
         }
+
         // next();
         return res.send(true)
     });
